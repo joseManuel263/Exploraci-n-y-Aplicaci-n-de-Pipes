@@ -1,0 +1,24 @@
+<div class="container mt-5">
+  <h2 class="mb-4 text-primary">Lista de Productos</h2>
+  <ul class="list-group">
+    <li *ngFor="let product of products" class="list-group-item product-item">
+      <h3 class="h4">{{ product.nombre }}</h3>
+      <p class="mb-1"><strong>Descripción:</strong> {{ product.descripccion | titlecase }}</p>
+      <p class="mb-1"><strong>Precio:</strong> {{ product.precio | currency:'$':'symbol':'1.2-2' }}</p>
+      <p class="mb-1"><strong>Fecha de lanzamiento:</strong> {{ product.releaseDate | date:'dd/MM/yyyy' }}</p>
+    </li>
+  </ul>
+
+  <div class="mt-5">
+    <h3 class="mb-3 text-primary">Uso de los MomentPipe:</h3>
+    <div class="list-group">
+      <p class="list-group-item highlight"><strong>Formatear una fecha:</strong> {{ testDate | moment:'Format':'DD/MM/YYYY' }}</p>
+      <p class="list-group-item highlight"><strong>Obtener el día de la semana:</strong> {{ testDate | moment:'Format':'dddd' }}</p>
+      <p class="list-group-item highlight"><strong>Restar días a una fecha:</strong> {{ testDate | moment:'Subtract':7:'days' }}</p>
+      <p class="list-group-item highlight"><strong>Sumar horas a una fecha:</strong> {{ testDateTime | moment:'Add':3 }}</p>
+      <p class="list-group-item highlight"><strong>Diferencia entre dos fechas en días:</strong> {{ '2023-07-25' | moment:'Diff':'days':'2023-07-31' }}</p>
+      <p class="list-group-item highlight"><strong>Verificar si una fecha está antes de otra:</strong> {{ '2023-07-25' | moment:'Before':'2023-07-31' }}</p>
+      <p class="list-group-item highlight"><strong>Verificar si una fecha está después de otra:</strong> {{ '2023-07-25' | moment:'After':'2023-07-31' }}</p>
+    </div>
+  </div>
+</div>

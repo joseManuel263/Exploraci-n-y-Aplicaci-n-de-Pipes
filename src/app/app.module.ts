@@ -3,13 +3,17 @@ import { BrowserModule, provideClientHydration } from '@angular/platform-browser
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ProductListComponent } from './product-list/product-list.component';
+import { MomentPipe } from './moment.pipe';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ProductListComponent,
+    MomentPipe
   ],
   imports: [
-    BrowserModule,
+    BrowserModule, 
     AppRoutingModule
   ],
   providers: [
